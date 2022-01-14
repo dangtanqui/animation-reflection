@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #f1f1f1; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+.loader {
+  bottom: 150px;
+  position: relative;
+  width: 850px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+
+.loader .bar {
+  width: 50px;
+  height: 300px;
+  animation: animate 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite; }
+  .loader .bar:nth-child(1) {
+    background: #1e3f57;
+    animation-delay: 0ms; }
+  .loader .bar:nth-child(2) {
+    background: #264a63;
+    animation-delay: 50ms; }
+  .loader .bar:nth-child(3) {
+    background: #2d566f;
+    animation-delay: 100ms; }
+  .loader .bar:nth-child(4) {
+    background: #35617a;
+    animation-delay: 150ms; }
+  .loader .bar:nth-child(5) {
+    background: #3d6d86;
+    animation-delay: 200ms; }
+  .loader .bar:nth-child(6) {
+    background: #447892;
+    animation-delay: 250ms; }
+  .loader .bar:nth-child(7) {
+    background: #4c849e;
+    animation-delay: 300ms; }
+  .loader .bar:nth-child(8) {
+    background: #548fa9;
+    animation-delay: 350ms; }
+  .loader .bar:nth-child(9) {
+    background: #5b9bb5;
+    animation-delay: 400ms; }
+  .loader .bar:nth-child(10) {
+    background: #63a6c1;
+    animation-delay: 450ms; }
+
+@keyframes animate {
+  0% {
+    transform: rotate(-0.5turn) rotateX(1turn); }
+  70%, 100% {
+    transform: none; } }
+
+/*# sourceMappingURL=style.css.map */

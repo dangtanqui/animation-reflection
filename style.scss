@@ -1,0 +1,49 @@
+$n: 10;
+$c: #63a6c1, #1e3f57;
+$bar-width: 50px;
+$bar-height: 300px;
+$loader-width: ($n + 1) * $bar-width + $bar-height;
+$loader-height: $bar-height;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f1f1f1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.loader {
+  bottom: 150px;
+  position: relative;
+  width: $loader-width;
+  height: $loader-height;
+  display: flex;
+  justify-content: center;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+.loader .bar {
+  width: $bar-width;
+  height: $bar-height;
+  @for $i from 0 to $n {
+    $args: append($c, $i * 100% / ($n - 1));
+    &:nth-child(#{$i + 1}) {
+      background: mix($args...);
+      animation-delay: $i * 50ms;
+    }
+  }
+  animation: animate 3s cubic-bezier(.81, .04, .4, .7) infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(-.5turn) rotateX(1turn);
+  }
+  70%, 100% {
+    transform: none;
+  }
+}
